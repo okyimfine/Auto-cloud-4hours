@@ -4,5 +4,5 @@ window.addEventListener("load", () => {
 
 const backBtn = document.getElementById("backToMain");
 backBtn.addEventListener("click", () => {
-  window.location.href = "https://yourusername.github.io/fake-cloud-page/";
+  window.location.href = "https://okyimfine.github.io/Free-cloud-ugphone/";
 });
