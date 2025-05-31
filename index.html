@@ -3,17 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Puzzle Game - Auto Reward</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Free Cloud Claimed</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem 3rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .copied {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: green;
+    }
+
+    .back-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #00ffc8;
+      color: black;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #00bfa1;
+    }
+  </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Welcome to Puzzle Game</h1>
-    <p>No puzzle here — just your free cloud reward!</p>
+    <h1>🎉 Reward Claimed!</h1>
+    <p id="claimMessage">
+      You have received <strong>100 Points</strong>.<br>
+      Your cloud email: <strong id="claimedEmail">pleasegithub7@gmail.com</strong><br>
+      <span class="copied" id="copyMsg">(Copying email...)</span>
+    </p>
     <button id="backToMain" class="back-button">⬅ Back to Main Page</button>
   </div>
 
-  <script src="game.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const email = "pleasegithub7@gmail.com";
+      const copyMsg = document.getElementById("copyMsg");
+
+      navigator.clipboard.writeText(email).then(() => {
+        copyMsg.textContent = "(Email copied to clipboard!)";
+      }).catch(err => {
+        copyMsg.textContent = "(Failed to copy email)";
+        console.error("Clipboard error:", err);
+      });
+    });
+
+    document.getElementById("backToMain").addEventListener("click", () => {
+      window.location.href = "https://yourusername.github.io/fake-cloud-page/";
+    });
+  </script>
+
 </body>
 </html>
